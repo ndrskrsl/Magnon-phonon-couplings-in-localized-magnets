@@ -1,0 +1,518 @@
+%\documentclass[checkin,prb,groupedaddress]{revtex4}
+
+%\documentclass[aps,prb,preprint,groupedaddress]{revtex4}
+%\documentclass[aps,prb,preprint,superscriptaddress]{revtex4}
+\documentclass[aps,prl,twocolumn,superscriptaddress,amsmath,amssymb,floats,aps,10pt]{revtex4-1}
+%\bibliographystyle{apsrev}
+\pdfoutput=1
+\usepackage{graphicx}
+\newcommand{\vL}{\mbox{\bf L}}
+\newcommand{\vB}{\mbox{\bf B}}
+\usepackage{bm}% bold math
+
+
+\begin{document}
+
+
+\title{Magnon-phonon couplings in localized magnets}% Force line breaks with \\
+
+\author{S.L. Holm}
+\email[]{sonja@fys.ku.dk}
+\author{A. Kreisel}
+\author{T.K. Sch\"affer}
+\author{N. Momsen}
+\author{A. Bakke}
+\author{M. Bertelsen}
+\author{P.J. Ray}
+\affiliation{Nanoscience Center, Niels Bohr Institute, University of Copenhagen, 2100 Copenhagen {\O}, Denmark}
+
+\author{J. Larsen}
+\affiliation{Institute of Physics, Technical University of Denmark, 2800 Lyngby, Denmark}
+
+\author{Z. Yamani}
+\affiliation{Chalk River National Laboratories, Canada}
+
+\author{J.O. Birk}
+\author{U. Stuhr}
+\author{Ch. Niedermayer}
+\affiliation{Laboratory of Neutron Scattering, Paul Scherrer Institute, Villigen, Switzerland}
+
+\author{P.P. Deen}
+\affiliation{European Spallation Source, Stora Algatan 4, 22350 Lund, Sweden}
+
+\author{A. Fennell}
+\affiliation{Laboratory of Neutron Scattering, Paul Scherrer Institute, Villigen, Switzerland}
+
+\author{B.M. Andersen}
+\author{K. Lefmann}
+\affiliation{Nanoscience Center, Niels Bohr Institute, University of Copenhagen, 2100 Copenhagen {\O}, Denmark}
+
+
+
+\date{\today}% It is always \today, today,
+%          \setcounter{equation}{0}
+%  \renewcommand{\thefigure}{\Roman{figure}}
+%   \renewcommand{\theequation}{S\arabic{equation}}
+\newcommand{\bd}{\bm}
+             %  but any date may be explicitly specified
+%
+%\pacs{74.20.-z, 74.20.Rp, 74.25.Jb, 74.70.Xa}
+             
+\begin{abstract}
+\begin{itemize}
+ \item build up theory for magnon-phonon interactions in localized Heisenberg magnets
+ \item discuss special cases and limitations
+ \item application to a triangular antiferromagnet
+ \item calculate expected cross section for neutron scattering experiments, compare to experimental results
+\end{itemize}
+
+\end{abstract}
+%\textit{Experimental details [Samples, data analysis].}\\
+
+\keywords{multiferroics, spin-wave, inelastic neutron scattering}
+\maketitle
+%\textit{Magnons in YMnO$_3$.}\\
+\section{Introduction}
+
+\section{Spin-wave expansion}
+As discussed in the main text, we start from a localized spin Hamiltonian with spin $S=2$ operators
+${\bf S}_{i\bf R}$ located at the positions of the Mn atoms\cite{Mn_positions} in the P6$_3$cm group with setting
+$x=0.315$\cite{Petit2007,Toulouse2014},
+\begin{equation}
+ H_S=\sum_{ij, \bf R \bf R'}J_{ij,{\bf R}  {\bf R}'} {\bf S}_{i\bf R}\cdot {\bf S}_{j {\bf R}'}+\sum_{i, \bf R}\bigl( {\bf h}_{i}\cdot {\bf S}_{i \bf R}+D S_{i\bf R}^z S_{i\bf R}^z\bigr)\;.\label{eq_HS}
+\end{equation}
+with in-plane coupling $J_{ij,{\bf R}  {\bf R}'}=J$ if $(i,{\bf R})$ and $(j,{\bf R}')$ are nearest neighbors, and two non-equal out-of plane couplings
+$J_{z_1}$ and $J_{z_2}$. The easy plane-anisotropy $D$ forces the spins in the classical ground state into the plane.
+A second anisotropy can be written in terms of an effective magnetic field, ${\bf h}_{i}={\bf h}-H{\bf n}_i$ where $\bf h$ is an external magnetic field, $H$ is an easy-axis anisotropy
+and ${\bf m}_i$ is the direction of the local magnetization at site $i$. 
+For calculation purposes, we use a non-symmetric effective g-tensor $g_i$ and can express the effective magnetic field in terms
+of an magnetic induction that is arbitrarily directed parallel to the crystallographic $c$ direction, ${\bf b}={\bf e}_z$, via ${\bf h}_i=g_i{\bf b}$.
+Next, the classical groundstate is determined by replacing the spin-operators in the above expression by ${\bf S}_{i\bf R}=S{\bf m}_i$ and parametrization of
+the local coordinate system via
+\begin{subequations}
+ \begin{align}
+  \bd m_i&=c_\theta [\cos(\theta_i)\bd e_x +\sin(\theta_i)\bd e_y] +s_\theta \bd e_z \,,\\
+    \bd e_i^{(1)}&=\sin(\theta_i)\bd e_x -\cos(\theta_i)\bd e_y\,,\\
+    \bd e_i^{(2)}&=s_\theta [\cos(\theta_i)\bd e_x +\sin(\theta_i)\bd e_y]-c_\theta \bd e_z\,,\label{eq_loc_coord_h}
+ \end{align}
+\end{subequations}
+where $s_\theta=\sin\theta$ and $c_\theta=\cos\theta$ and $\theta$ is the canting angle of the spins out of the plane an $\theta_i$ is the local rotation angle of the spins
+and the minimization of the resulting energy with respect to the angles $\theta_i$ and $\theta$.
+For an ordinary single $\bd Q$ antiferromagnet, it would be given by $\theta_i=\bd Q\cdot R_i$, but in our case the alternating layers
+have ordering vectors of different directions, and therefore do not allow such a parametrization.
+%and local coordinate systems are defined at each position $i$ such that the classical magnetization
+%points towards the ${\bf m}_i$ direction and two spherical unitary vectors ${{\bf e}_i}^\pm$ complete the definition of the coordinate system\cite{Kreisel11,Toth15}.
+%The spin-wave expansion can then be made for the general case by use of the Holstein-Primakoff transformation\cite{Holstein40} in conjunction with a Fourier transformation with respect
+%to the repeating magnetic elementary cell.
+Introduction of the
+spherical vectors $\bd e_i^{\pm}=\bd e_i^{ (1)}\pm i\bd e_i^{(2)}$
+allows to rewrite this rotantion as
+ \begin{equation}
+  {\bf S}_{i\bf R}=S_{i\bf R}^\parallel \bd m_i  +\bd S_{i\bf R}^\perp=S_{i\bf R}^\parallel \bd m_i+\frac 12 \sum_{p=\pm}S_{i\bf R}^{-p} \bd e_i^{\prime p}.
+ \end{equation}
+With the Holstein-Primakoff transformation (up to leading order in $1/S$)
+\begin{subequations}
+  \begin{align}
+S_{i\bf R}^+\approx\sqrt{2S}b_{i\bf R}\,,\notag\\
+S_{i\bf R}^-\approx\sqrt{2S} b_{i\bf R}^\dagger\,,\notag\\
+S_{i\bf R}^\parallel=S-b_{i\bf R}^\dagger b_{i\bf R}\,,\label{eq_HP}
+  \end{align}
+  \end{subequations}
+we obtain the form
+\begin{equation}
+ {\bf S}_{i\bf R}=\sqrt{\frac S2}\bigl(\bd e_i^{-} b_{i\bf R}+\bd e_i^+b_{i\bf R}^\dagger\bigr)+\bd m_i (S-b_{i\bf R}^\dagger b_{i\bf R})\label{eq_hp_rotation}
+\end{equation}
+such that all coefficients for the magnon operators $b_{i\bf R}$ in the quadratic Hamiltonian can be collected straight forward\cite{Toth15} and transformed to momentum space.
+
+
+\section{Phonon Hamiltonian}
+\section{Phonon modes in a triangular lattice}
+To calculate the phonon modes from a simple model, we use a triangular latice of Mn atoms (for simplicity located at the
+ideal $x=1/3$ positions) with lattice constant $a$, mass $m$ and the positions of the
+corresponding Bravais lattice $\{ \bd{R}_i \}$ coupled to their nearest neighbors with a spring constant $C$.
+Defining the direction vectors  in the plane with the cartesian coordinates
+\begin{equation}
+\bd a_i=(\cos(\pi(i-1)/3),\sin(\pi(i-1)/3))^T\label{eq_NNvectors}
+\end{equation}
+we can write down the equations of motion
+in frequency space as
+\begin{align}
+ \omega^2 \frac{m}{a^2 C} \bd u^{(n)}&=\bd a_1 \bd a_1^T(2\bd u^{(n)}-\bd u  ^{(n+e_1)}-\bd u^{(n-e_1)})\notag\\
+ &+\bd a_2 \bd a_2^T(2\bd u^{(n)}- \bd u^{(n+e_2)}-\bd u^{(n-e_2)})\notag\\
+  &+\bd a_3 \bd a_3^T(2\bd u^{(n)}- \bd u^{(n+e_1-e2)}-\bd u^{(n+e_1-e_2,2)})\,,
+\end{align}
+Note that $\bd u^{(n)}$ labels the position of the elementary cell $n$.
+%Defining the lattice vectors $\bd x=(a,0)^T$ and $\bd y=(0,a\sqrt(3)/2)$, we can rewrite
+%$\bd u^{(n+e_s,i)}=\bd u^{(n,i)}e^{i\bd k\cdot \bd s}$ with $s\in\{x,y\}$ as well as for the sum
+%$\bd u^{(n+e_s+e_v,i)}=\bd u^{(n,i)}e^{i\bd k\cdot( \bd s+\bd v)}$.
+Using the Bloch theorem $u^{(n+ \bd{R}_i)}=u^{(n)} e^{-i\bd k\cdot  \bd{R}_i }$, we rewrite the r.h.s. of the equation above and work out the products
+\begin{subequations}
+ \begin{align}
+  \bd a_1 \bd a_1^T=\frac{1} 4\left(\begin{array}{cc}
+                           3&\sqrt 3\\
+                           \sqrt 3&1
+                          \end{array}\right)\\
+  \bd a_2 \bd a_2^T=\frac 14 \left(\begin{array}{cc}
+                           0&0\\
+                           0&1
+                          \end{array}\right)\\
+  \bd a_3 \bd a_3^T=\frac 14 \left(\begin{array}{cc}
+                           1&-\sqrt 3\\
+                           -\sqrt 3&3
+                          \end{array}\right)\,,
+ \end{align}
+\end{subequations}
+such that we can rewrite the equations of motion as
+\begin{subequations}
+ \begin{align}
+   \omega^2 \frac{m}{Ca^2} \bd u^{(n)}&=D\bd u^{(n)}
+ \end{align}
+\end{subequations}
+with the matrix
+\begin{align}
+ {D}=\left(\begin{array}{cc}
+          3-3\cos\phi_1\cos\phi_2 &\sqrt{3}\sin \phi_1\sin\phi_2\\
+          \sqrt{3}\sin \phi_1\sin\phi_2&3-2\cos 2\phi_2 -\cos\phi_1\cos\phi_2
+         \end{array}\right)
+\end{align}
+where $\phi_1=\sqrt 3/2 k_x a$ and $\phi_2=1/2 k_y a$. The solution of the equation of motion are the eigenfrequencies $w_{\bd{k},s}$ and the corresponding
+eigenvectors $\bd e_{\bd{k},_s}$ such that
+ \begin{figure}[tb]
+%  \includegraphics[width=\linewidth]{phonon_hexagonal-crop}
+ \caption{Phonon dispersion plotted along high symmetry directions\cite{Martinsson03}}
+ \label{fig_phonon_spectrum_hex}
+ \end{figure}
+we can write down the phonon Hamiltonian as
+ \begin{equation}
+{H}_{L} =   \sum_{ \bd{k}  s } \omega_{\bd{k},s } \left( a^{\dagger}_{ \bd{k}, s}
+ a_{\bd{k}, s} + \frac{1}{2} \right),
+ \label{eq:Hp}
+ \end{equation}
+where $a_{\bd{k},s}$ annihilates a phonon with wave-vector $\bd{k}$ and
+polarization $s$.
+In our sytem, the phonon modes are modeled as three acoustic modes $s=1,2,3$, two of them obtained from the two
+dimensional system as discussed above, the third obtained from a rotation of the polarization vector ${\bf e}_{\bd k,s}$ of the transversal mode out of the plane by keeping
+the eigenenergy degenerate.
+We now have for the dynamic positions of the atoms in the full elementary cell ${\bd{r}}_i = \bd{R}_i + \bd{X}_i$.
+The lattice distortions are quantized in the usual way,
+ \begin{subequations}
+ \begin{align}
+ \bd{X}_i & =  \frac{1}{\sqrt{N}} \sum_{\bd{k}} e^{ i \bd{k} \cdot \bd{R}_i } 
+ \bd{X}_{\bd{k}},
+ \\
+ \bd{X}_{\bd{k}} & =  \sum_{\lambda} X_{ \bd{k} \lambda } \bd{e}_{ \bd{k} \lambda } ,
+ \\
+  X_{ \bd{k} \lambda } & =   \frac{1}{ \sqrt{2 M \omega_{\bd{k} \lambda }} }
+ ( a_{ \bd{k} \lambda } +  a_{ -\bd{k} \lambda }^{\dagger} ).
+ \label{eq_phononop}
+ \end{align}
+\end{subequations}
+Introducing the momentum operators conjugate to the $X_{\bd{k} \lambda}$,
+ \begin{equation}
+ P_{ \bd{k} \lambda }  =   \frac{1}{i} \sqrt{ \frac{  M \omega_{\bd{k} \lambda }}{2}  }
+ ( a_{ \bd{k} \lambda } -  a_{ -\bd{k} \lambda }^{\dagger} ),
+\end{equation}
+the pure phonon Hamiltonian (\ref{eq:Hp}) can also be written as
+ \begin{equation}
+{H}^{\mathrm{ pho}} =    \sum_{ \bd{k}  \lambda } \left[
+ \frac{ P_{ - \bd{k} \lambda} P_{  \bd{k} \lambda}}{2 M} +
+ \frac{M}{2} \omega^2_{ \bd{k} \lambda}  X_{ - \bd{k} \lambda} X_{  \bd{k} \lambda}
+ \right].
+ \end{equation}
+
+
+\section{Spin-lattice interactions.}
+
+\section{Magnon-Phonon interaction}
+The magnon-phonon interaction can originate from different terms as discussed for example in Ref. \cite{Boiteux72}:
+The volume magnetostriction is described by the modulation of the exchange interactions $J_{ij}$
+in the presence of phonons. In many magnets this mechanism doesn't play a role since the corresponding
+coupling vertex between magnons and phonons vanishes, for example in the ferromagnet\cite{Rueckriegel14} or for
+any collinear antiferromagnet.\footnote{We don't go into details here, but the general reason is that to linear order in the
+derivative of the exchange coupling with respect to lattice deformations one bond gets stronger and the corresponding bond in
+the opposite direction gets weaker by the same amount, so the net effect to the energy vanishes. This is of course not true
+any more once interactions with multiple phonons play a role.}
+For our spiral magnet, the volume magnetostriction in principle gives a finite contribution\cite{Kreisel11},
+but only for couplings to phonons that actually modulate the positions of the ions in the plane.
+Experimentally, it has been shown that the strong magnetoelastic coupling arises from
+a transverse phonon that has polarization along the crystallographic $c$-axis of YMnO$_3$\cite{Pailhes09,Petit2007}
+such that also in our case the coupling from this mechanism will be zero to leading order because
+the lattice vibrations simply don't modulate exchange couplings in plane.
+For completeness, we will mention the corresponding analysis that has been carried
+out in Ref. \cite{Kim07} where the magnon-phonon hybridization of one magnon mode with one phonon has been discussed.
+The coupling of magnons and phonons via the crystalline field can be described by
+the Hamiltonian\cite{Laurence73,Boiteux72}
+\begin{equation}
+ H_{\text{SL}}=\sum_i \sum_{\alpha\beta\gamma\delta} G_{\alpha\beta\gamma\delta} S^\alpha_iS^\beta_i \epsilon_{\gamma\delta}^i
+\end{equation}
+where $G$ is the spin-phonon coupling tensor.
+This can be written in terms of irreducible representations of the spin and lattice functions in the hexagonal symmetry class as\cite{Callen65}
+\begin{equation}
+ H_{\text{SL}}=-\sum_{i}\sum_{\Gamma}\sum_{jj'} \tilde B_{jj'}^\Gamma(i) \sum_{i'}\epsilon_\Gamma^{i'} S_{\Gamma j}^{i'}(i)\,.
+\end{equation}
+Assuming equivalent ions, we drop the dependence on $j$ and $j'$, e.g. $\tilde B_{jj'}^\Gamma(i) \rightarrow B_\Gamma(f)$
+and by translational symmetry also the dependence on $i$.
+For the hexagonal system, this reads explicitly
+\begin{align}
+ H_{\text{SL}}&=-\sum_{i}\biggl( B_{12}^\alpha \epsilon^{\alpha,1}\bigl[(S_i^x)^2+(S_i^y)^2+(S_i^z)^2\bigr]\notag\\
+ &+B_{22}^\alpha \epsilon^{\alpha,2} \frac{\sqrt{3}}{2} \bigl[(S_i^z)^2-\frac 13 \bd S^2\bigr]\notag\\
+ &+B^\gamma \bigl[\epsilon^{\gamma,1} \frac 12 \bigl[(S_i^x)^2-(S_i^y)^2\bigr]+\epsilon^{\gamma,2} \frac 12 \{S_i^x,S_i^y\}\bigr]\notag\\
+  &+B^\epsilon \bigl[\epsilon^{\epsilon,1} \frac 12 \{S_i^y,S_i^z\}+\epsilon^{\epsilon,2} \frac 12 \{S_i^x,S_i^z\}\bigr]\biggr)\label{eq_sl}
+\end{align}
+where the strains are defined as
+\begin{subequations}
+ \begin{align}
+  \epsilon^{\alpha,1}&=\epsilon_{xx}+\epsilon_{yy}+\epsilon_{zz}\\
+  \epsilon^{\alpha,2}&=\frac{\sqrt{3}}{2}\bigl[\epsilon_{zz}-\frac 1 3 \epsilon^{\alpha,1}\bigr]\\
+  \epsilon^{\gamma,1}&=\frac 12 \bigl[\epsilon_{xx}-\epsilon_{yy}\bigr]\\
+  \epsilon^{\gamma,2}&=\epsilon_{xy}\\
+  \epsilon^{\epsilon,1}&=\epsilon_{yz}\\
+  \epsilon^{\epsilon,2}&=\epsilon_{xz}\,
+ \end{align}
+\end{subequations}
+where $\{A,B\}=AB+BA$ is the anti commutator and the strain tensor is defined as
+\begin{equation}
+ \epsilon_{\alpha\beta}^i=\frac 12 (E_{\alpha\beta}+E_{\beta\alpha})=\frac 12 \biggl(\frac{\partial X_i^\beta}{\partial r_\alpha}+\frac{\partial X_i^\alpha}{\partial r_\beta}\biggr).
+ \label{eq_strain}
+\end{equation}
+Since the spin-operators commute with the strain tensor elements, it is possible to write Eq. (\ref{eq_sl}) into a matrix form when only considering the leading order in $1/S$\footnote{In principle it is also possible to approximately take into account higher order corrections from the commutation of the spin operators in the bosonic prescription as discussed in \cite{Jensen_risoe}. At this point we will not include these corrections as they will approximately renormalize the magnon-phonon interaction constants which are unknown parameters at this point.}
+\begin{equation}
+ H_{SL}=-\sum_{i\bf R} {\bf S}_{i\bf R}^T  E_i {\bf S}_{i\bf R}
+\end{equation}
+and use Eq. (\ref{eq_hp_rotation}). Retaining only terms that couple linearly similar to the approach of Ref. \onlinecite{Petit2007}, we obtain
+\begin{align}
+  H_{SL}&=-S\sqrt{\frac S2} \sum_{i\bf R} \left\{(\bd e_i^{-T} b_{i\bf R}+e_i^{+T}b_{i\bf R}^\dagger)E_i \bd m_i \right.\\
+  &\left. +\bd m_i^T E_i (\bd e_i^{-} b_{i\bf R}+e_i^{+}b_{i\bf R}^\dagger\right\}
+\end{align}
+or similarily in momentum space
+\begin{align}
+  H_{SL}&=-S\sqrt{\frac S2} \sum_{i\bd k} \left\{(\bd e_i^{-T} b_{i\bd k}+e_i^{+T}b_{i\bd k}^\dagger) E_{i,\bd k} \bd m_i \right.\\
+  &\left. +\bd m_i^T E_{i,\bd k} (\bd e_i^{-} b_{i\bd k}+e_i^{+}b_{i\bd k}^\dagger\right\}
+\end{align}
+
+The nonlocal contributions of the strain tensor can be obtained by a method introduced in Ref. \cite{Evenson69}
+where the local strain is replaced by a nearest neighbor contraction
+\begin{equation}
+\epsilon_{\alpha\beta}^i \rightarrow \tilde\epsilon_{\alpha\beta}^i=\frac 1 n \sum_{\bf \delta} \epsilon_{\alpha\beta}(i,i+\bf \delta)
+\end{equation}
+where ${\bf \delta}$ is the sum over nearest neighbors and $n$ is a normalization constant that ensures that
+$\tilde\epsilon_{\alpha\beta}^i$ reduces to $\epsilon_{\alpha\beta}^i$ in the long-wavelength limit\cite{Jensen_risoe}.
+Defining functions that are isomorphic to the strain tensors,
+\begin{align}
+ \epsilon_{\alpha\beta}(i,j)=\frac 12 &\left[(R_i^\alpha-R_j^\alpha)(X_i^\beta-X_j^\beta)\right.\notag\\
+ &\left.+(R_i^\beta-R_j^\beta)(X_i^\alpha-X_j^\alpha)\right]
+\end{align}
+where $X_i^\alpha$ are the displacements due to lattice vibrations and $R_i^\alpha$ are the cartesian components of the lattice positions of the ions.
+With the same set of vectors connecting nearest neighbors as used above, Eq.(\ref{eq_NNvectors}), we can obtain their cartesian components and add
+up the contributions after introduction of the phonon operators in momentum space, $X_{\bd k,s}^\alpha$. The normalization constant is simply obtained
+by fixing the small $\bd k$ expansion to the result from the derivative in Eq. (\ref{eq_strain}).
+For the triangular lattice, we obtain the following structure function $\bd g(\bd k)=(g^{x},g^{y},g^{z})$
+\begin{subequations}
+ \begin{align}
+ g^{x}&=\frac 1{2a}\sin\biggl(\frac h 2\biggr)\cos\biggl(\frac h 6+\frac k 3\biggr)\\
+ g^{y}&=\frac 1{2\sqrt{3}a}\biggl[\sin\biggl(\frac{h}{6}+\frac{k}{3}\biggr)\cos\biggl(\frac{h}{2}\biggr)+\sin\biggl(\frac{h}{3}+\frac{2k}{3}\biggr)\biggr]\\
+     g^{z}&=\frac 1 c \sin l
+  \end{align}
+\end{subequations}
+where the momentum $(hkl)$ is already expressed with respect to the relevant magnetic elementary cell such that the components of the matrix $E_i$ are given by
+\begin{equation}
+ E_i^{\alpha\beta}=\frac{1}{N}\sum_{\bd k, s} f_{\bd k,s}^{\alpha \beta} e^{i\bd k\cdot \bd R_i}
+\end{equation}
+with
+\begin{equation}
+ f_{\bd k,s}^{\alpha \beta} =\frac i2 g_{\bd k,s}^{\alpha \beta}\frac{a_{\bd k,s}+a_{\bd k,s}^\dagger}{\sqrt{2mw_{\bd k,s}}}
+\end{equation}
+and the coupling constants $g_{\bd k,s}^{\alpha \beta}$ are sums of products of $B^\sigma$ from the spin-lattice Hamiltonian and momentum-dependent structure 
+function and the phonon polarization $\bd g\cdot \bd e_{\bd k,s}$.
+Writing
+\begin{equation}
+ E_{i,\bd k}^{\alpha\beta}=\frac{4}{iS\sqrt S}\sum_s(a_{\bd k,s}+a_{\bd k,s}^\dagger)G_{\bd k,s,i}
+\end{equation}
+we can see that the spin-lattice Hamiltonian is a hybridization term between the Holstein-Primakoff magnon operators and the phonon
+operators with a product $G_{\bd k,s,i}$ and the unitary vectors in Eq. (\ref{eq_loc_coord_h}) as matrix elements.
+Rearranging all terms will give the result
+\begin{equation}
+H= \sum_{\bf k}(\vec b_{\bf k}^\dagger,\vec b_{-\bf k})\mathcal D_{\bf k}\left(\begin{array}{c}
+                                                                               \vec b_{\bf k}\\
+                                                                               \vec b_{\bf -k}^\dagger
+                                                                              \end{array}\right) \label{eq_Htot}\,.
+\end{equation}
+For the calculation of the ground state and the Fourier transforms of the terms from the spin Hamiltonian, we use the SpinW\cite{Toth15} package, and therefore
+follow the notation for the matrices $A(\bd k)$, $B(\bd k)$ and $C$ of that reference.
+The grand dynamical matrix is then given by
+\begin{equation}
+ \mathcal D_{\bf k}=\left(
+ \begin{array}{cccc}
+  A(\bd k)-C & \Gamma(\bd k) & B(\bd k) &\Gamma(\bd k)\\
+  \Gamma^\dagger(\bd k) & W(\bd k) & \Omega(\bd k)&0\\
+  B^\dagger(\bd k)& \Omega^\dagger(\bd k) &\bar A(-\bd k)-C &\Omega(\bd k)\\
+  \Gamma^\dagger(\bd k) &0&\Omega^\dagger(\bd k) &W(-\bd k)
+ \end{array}\right)\,,
+\end{equation}
+where the phonon dispersions appear in $W(\bd k)=\text{diag}(\{w_{\bd k,s}\})$ and the elements of the matrices are given by
+\begin{subequations}
+ \begin{align}
+ \Gamma(\bd k)^{is}&=\bd e_i^{-T}G_{\bd k,s,i}\bd m_i\\
+ \Omega(\bd k)^{is}&=\bd m_i^TG_{-\bd k,s,i}\bd e_i^{-}
+ \end{align}
+\end{subequations}
+
+
+
+
+\section{Magnetoelastic waves}
+Looking at the matrix ${\mathcal D}_{\bf k}$, one sees that not all modes couple to the phonon mode. This is arising from the fact that the single-ion magnetostriction
+is uniform in space and only the spiral parts of the Hamiltonian couple to it. Following Colpa \cite{Colpa78,Serga12} we use the algorithm to diagonalize
+the Bosonic Hamiltonian giving the para-unitary matrix
+\begin{equation}
+  {\mathcal J}_{\bd k}=\left(\begin{array}{cc} {\mathbf U}_{\bd k}^\dagger&- {\mathbf V}_{\bd k}^\dagger\\
+- {\mathbf W}_{\bd k}^\dagger& {\mathbf X}_{\bd k}^\dagger\end{array}\right)\quad   {\mathcal J}_{\bd k}^{-1}=\left(\begin{array}{cc} {\mathbf U}_{\bd k}& {\mathbf W}_{\bd k}\\
+ {\mathbf V}_{\bd k}& {\mathbf X}_{\bd k}\end{array}\right)
+\end{equation}
+to diagonalize the Hamiltonian (\ref{eq_Htot}).
+This transformation connects the vectors of the true magnetoelastic operators $\vec{\gamma}_{\bf k}^\dagger$ to those in the Holstein-Primakoff basis via
+\begin{equation}
+        \vec{\gamma}_{\bd k}^\dagger={\mathcal J}_{\bd k}  \vec b_{\bd k}^\dagger \quad \Leftrightarrow \quad  {\mathcal J}_{\bd k}^{-1}\vec{\gamma}_{\bd k}^\dagger=  \vec b_{\bd k}^\dagger
+        \label{eq_genbogoliubov}
+\end{equation}
+and transforms to the diagonal Hamiltonian
+\begin{equation}
+ {H}_2=\frac 12 \sum_{\bd k}\vec \gamma_{\bd k}^\dagger{\mathcal E}_{\bd k} \vec \gamma_{\bd k}+E_0^{(2)}
+\end{equation}
+with the diagonal matrix ${\mathcal E}_{\bd k}=\text{diag}(\{\omega_{\bd k,l}\})$. In other words ${\mathcal J}_{\bd k}$ is the wavefunction of the coupled magnetoelastic waves.
+With our choice of the ordering in $\vec b_{\bf k}$, we can split up to the spin and lattice part of the wavefunction by
+\begin{equation}
+ {\mathcal J}_{\bd k}^{-1}=\left(
+  \begin{array}{cccc}
+\mathcal N^{\uparrow}\\
+\mathcal M^{\uparrow}\\
+\mathcal N^{\downarrow}\\
+\mathcal M^{\downarrow}
+  \end{array}\right)
+\end{equation}
+and define the matrices $\mathcal N$ and $\mathcal M$ via
+\begin{equation}
+\mathcal A=\left(
+   \begin{array}{cccc}
+    \mathcal A^{\uparrow}\\
+\mathcal A^{\downarrow}
+   \end{array}\right)\,.
+\end{equation}
+
+
+
+\section{Nuclear structure factor}
+In this section we derive the nuclear structure factor in presence of magnetoelastic waves as derived above.
+Starting point is the expression for the coherent nuclear cross section in Ref. \onlinecite{Lovesey_book}, chapter 4.4:
+%\begin{align}
+ %\left.\frac{d^2 \sigma}{d \Omega dE'}\right|_{\text{incoh}}^{\text{inel}}&=\frac{\sigma_i}{4\pi}\frac{k}{k'} \frac{1}{2\pi \hbar}\int_{-\infty}^{\infty} dt e^{-i\omega t} e^{-2W(\bd k)}\notag\\
+ %&\times \sum_i\left[e^{\langle \bd k\cdot\bd X_i\,\bd k\cdot\bd X_i(t)\rangle}-1\right]
+%\end{align}
+%and for the coherent contribution that we will consider in the following
+\begin{align}
+  \left.\frac{d^2 \sigma}{d \Omega dE'}\right|_{\text{coh}}^{\text{inel}}&=\frac{\sigma_i}{4\pi}\frac{k}{k'} \frac{1}{2\pi \hbar}\int_{-\infty}^{\infty} dt e^{-i\omega t} e^{-2W(\bd k)}\notag\\
+ &\times \sum_{ij}e^{i\bd k(\bd R_i-\bd R_j) \langle \bd k\cdot\bd X_i\,\bd k\cdot\bd X_j(t)\rangle}\,.
+\end{align}
+In case of lattice vibrations only, one simply puts in the time dependence of the phonon operator and simplifies to the expressions given in Eq. (4.70) and (4.71) of Ref. \onlinecite{Lovesey_book},
+but for the magnetoelastic waves, we first have to find the correct time-dependence of the phonon operator.
+Essentially, we know the time dependence of the magnetoelastic operators
+\begin{equation}
+ \gamma_l(\bd q,t)^\dagger=\gamma_l(\bd q)e^{i\omega_{\bd q l}t} 
+\end{equation}
+such that we have to use Eq. \ref{eq_genbogoliubov} to obtain for the phonon operator
+\begin{equation}
+ a_{\bd q, s}=\sum_l\left([{\mathbf U}_{\bd k}]_{sl}(\bd q)\gamma_l(\bd q)+[{\mathbf W}_{\bd q}]_{sl}\gamma_l(-\bd q)^\dagger\right)
+\end{equation}
+and consequently the time-dependence
+\begin{align}
+ a_{\bd q,s}&=\sum_l\left([{\mathbf U}_{\bd q}]^*_{sl}(\bd q)\gamma_l(\bd q)^\dagger e^{i\omega_{\bd q,l}t}\right.\notag\\
+ &\left.+[{\mathbf W}_{\bd q}]^*_{sl}\gamma_l(-\bd k)e^{-i\omega_{-\bd q,l}t}\right)\,.
+\end{align}
+Putting everything together, we can rewrite the expectation value
+\begin{align}
+ \langle \bd k\cdot\bd X_i\,\bd k\cdot\bd X_j(t)\rangle=\frac{|\bd k\cdot \bd e_{\bd k,s}|^2}{2NM}\sum_{\bd k}\frac{e^{i\bd k\cdot(\bd R_i-\bd R_j)}}{w_{\bd k,s}}\notag\\
+ \times \sum_{ls}([\mathbf W_{\bd k}]_{sl}+[\mathbf U_{-\bd k}]^*_{sl})([\mathbf U_{\bd k}]_{sl}+[\mathbf W_{\bd k}]_{sl}^*)\notag\\
+ \times\bigl\{[1+n(\omega_{\bd k,l})] e^{i\omega_{\bd k,l}t} +n(\omega_{\bd k,l}) e^{-i\omega_{\bd k,l}t}\bigr\}\,,
+\end{align}
+where $n(\omega)$ is the Bose function.
+Finally, we arrive at the expression
+%For simplicity and because it is a good approximation, we take the limit $T\rightarrow 0$ where only the second term contributes giving
+\begin{align}
+  \left.\frac{d^2 \sigma}{d \Omega dE'}\right|_{\text{coh}}^{\text{inel}}=\frac{\sigma_c}{4\pi}\frac{k'}{k} \frac{(2\pi)^3}{2V_0M} e^{-2W(\bd q)} |\bd k\cdot\bd e_{\bd k,s}|^2\notag\\
+  \times \sum_{\bd k,l,s}\frac{\mathcal M_{si}}{mw_{{\bf k}s}} \Delta(\omega,{\bf k},l)\label{eq_nuc_structure}
+\end{align}
+with
+$\Delta(\omega,{\bf k},l)= \delta(\omega- \omega_{{\bf k},l}d_{l,l})[n(\omega) +\frac 12 (1-d_{ll})]$ and $d_{ll}$ is a generalized Kronecker delta being negative for $l>N+M$.
+The prefactor containing the Debeye-Waller factor, the nuclear cross section of the corresponding atom and the kinematic factor $k'/k$ is ommitted in the expression of the main text where
+the dynamical structure factor is cited, since it is a momentum-independent constant which has to be adjusted to the experimental data.
+Note that the kinematic factor is experimentally divided out when accounting for
+constant counts at monitors.
+%\begin{align}
+% S_{\text{nuc}}({\bf q},\omega) =\sum_{s} |{\bf q}\cdot{\bf e}_{\bd k,s}|^2
+%  \sum_{l=1}^{2(N+M)}\frac{\mathcal M_{si}}{mw_{{\bf q}s}}\Delta(\omega,{\bf q},l)\, ,\label{eq_nuc_structure}
+%\end{align}
+%where $\bd G$ is a reciprocal vector and the combined matrix elements are given by
+%$M(n,\bd k)=([\mathbf W_{\bd k}]_{4n}+[\mathbf X_{\bd k}]_{4n}])([\mathbf U_{\bd k}]_{4n}+[\mathbf V_{\bd k}]_{4n}])$.
+% Note that the Debeye-Waller factor should be approximated by\cite{Lovesey_book}
+% \begin{equation}
+%  W(\bd q)=\frac{\hbar  q^2}{4M}\int_0^{\omega_m}\,d\omega \frac{Z(\omega)}{\omega}\coth(\frac 12 \hbar \omega \beta)\,;
+% \end{equation}
+% in the limit $T\rightarrow 0$, we can again simplify $\coth(\frac 12 \hbar \omega \beta)=1$ and rewrite
+% \begin{equation}
+%   W(\bd q)=\frac{\hbar  q^2}{4M}\int_0^{\omega_m}\,d\omega \frac{Z(\omega)}{\omega}
+%   =W_0q^2\,.
+% \end{equation}
+% In order to calculate the dynamical structure factor, at this point we ignore the prefactors and the Debeye Waller factor
+% as well as the sum over $\bd G$ which just brings us back to the first Brillouin zone with $\bd k=\bd q$.
+When evaluating the expression above, we broaden the result in energy by a convolution with a Gaussian containing the experimental resolution.
+%\begin{equation}
+% \delta(\omega-\omega_n(\bd q))=\pi \frac{\eta}{(\omega-\omega_n(\bd q))^2+\eta^2}\,.
+%\end{equation}
+\section{Magnetic cross section}
+For the mangnetic cross section, we follow the standart procedure in calculating the dynamical structure factor from the magnon
+operators in the Holstein-Primakoff basis\cite{Lovesey_book}, given the eigenstates of the full Hamiltonian.
+The transformations from the local coordinate system defined by Eq. (\ref{eq_loc_coord_h}) as well as the magnon part of the
+transformation in Eq. (\ref{eq_genbogoliubov}) has to be inserted, with the result\cite{Toth15}
+\begin{equation}
+ { S}^{\alpha\beta}_{\text{mag}}({\bf q},\omega)=\sum_{l=1}^{2(N+M)}\left[\mathcal N^\dagger e^{\alpha\beta}({\bf k}) \mathcal N\right]_{ll} \Delta(\omega,{\bf q},l)\, .
+\end{equation}
+The total magnetic cross section is then given by kinematic prefactors, the magnetic cross section $r_0$, the magnetic form factor $f(\bd q)$ and transverse spin structure factor,
+\begin{align}
+  \left.\frac{d^2 \sigma}{d \Omega dE'}\right|_{\text{coh}}=&r_0^2 \frac{k'}{k} (gf(\bd q))^2e^{-2W(\bd q)}\notag\\
+  &\times \sum_{\alpha\beta}(\delta_{\alpha\beta}-\frac{q_\alpha q_\beta}{\bd q^2}){ S}^{\alpha\beta}_{\text{mag}}({\bf q},\omega)
+\end{align}
+such that we can use the expression
+\begin{align}
+  \left.\frac{d^2 \sigma}{d \Omega dE'}\right|_{\text{coh}}=P_{\text{mag}}f(\bd q)^2\sum_{\alpha\beta}(\delta_{\alpha\beta}-\frac{q_\alpha q_\beta}{\bd q^2}){ S}^{\alpha\beta}_{\text{mag}}({\bf q},\omega)
+\end{align}
+for the calculation of the magnetic contribution to the measured count rates, where we use the magnetic form factor of Mn$^{2+}$\cite{TabCrys}
+and a experiment specific prefactor $P_{\text{mag}}$.
+
+
+\section{Comparison to experimental data}
+In order to reproduce the structure of magnon excitations in the magnetic field, it is required to take into account all 6 magnetic ions in the elementary cell.
+\begin{figure*}[]
+%\includegraphics[width=\textwidth]{Maps.png}
+\caption{
+Color-maps of the measured magnon and phonon dispersions along the main symmetry directions around $q=(100)$ and $q=(300)$. The data has been taken on EIGER and the small high resolution corners have been measured at \mbox{RITA-2}. An   overview of the $q$-positions used for the energy scans are shown in figure \ref{fig:qspace}. At $q=(100)$ the magnon signal is strong due to the magnetic structure factor. At $q=(300)$ the phonon and magnon intensities are similar as   the structure factors match at this $q$-position.
+Top left: Phonon dispersion at $q=(300)$ measured above $T_N$ ($T=100$ K). Top right: Magnon dispersion at $q=(100)$ measured at base temperature ($T=1.6$ K). Bottom left: Phonon and magnon dispersions measured at $q=(300)$ and 1.6 K.   Bottom right: Magnon dispersions at $q=(100)$ measured in an applied magnetic field of 13 T and at $T=1.6$ K.
+\label{fig:maps}}
+\end{figure*}
+
+
+\begin{figure*}[]
+%\includegraphics[width=\textwidth]{{YMnO_S_nuc_plot_8_h_13_dim_3_mode_mK3bsummed7_0607-nup}}
+\caption{Simulated neutron intensity for the scans as performed experimentally, for clarity, the broadening is fixed to the experimental broadening of the \mbox{RITA-2} experiment, except for the phonon map at high temperatures (top     left).}
+\label{fig_maps_calc}
+\end{figure*}
+
+\section{Summary and Conclusions}
+
+
+
+\bibliographystyle{phd_mypub}
+% \bibliographystyle{apsrev4-1}
+\bibliography{YMnO}{}
+\end{document}
+%
+% ****** End of file apssamp.tex ******
